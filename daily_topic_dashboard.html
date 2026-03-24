@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爆款选题监控看板</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#4F46E5', secondary: '#10B981', dark: '#111827' },
+                    fontFamily: { sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F3F4F6; }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); }
+        .gradient-text { background: linear-gradient(to right, #4F46E5, #10B981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .score-bar { height: 6px; border-radius: 3px; background-color: #E5E7EB; overflow: hidden; }
+        .score-fill { height: 100%; border-radius: 3px; }
+        @media (max-width: 640px) { .container { padding-left: 1rem; padding-right: 1rem; } }
+    </style>
+</head>
+<body class="text-gray-800 antialiased font-sans">
+
+    <!-- Header / Navigation -->
+    <nav class="bg-dark text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="bg-gradient-to-tr from-primary to-secondary p-2 rounded-lg">
+                        <i class="fas fa-robot text-xl"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight">AI 主编 <span class="font-normal text-gray-400 text-sm ml-2">v2.0</span></span>
+                </div>
+                <div class="text-sm font-medium text-gray-300 flex items-center gap-2" id="current-time-display">
+                    <i class="far fa-clock"></i> 加载中...
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-8 space-y-8">
+        
+        <!-- Welcome Section -->
+        <header class="text-center space-y-3 px-4">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-dark tracking-tight">
+                <span id="greeting-text">老板好</span>，今日 <span class="gradient-text">专属爆款选题</span> 已就绪。
+            </h1>
+            <p class="text-gray-500 text-base md:text-lg max-w-2xl mx-auto">
+                【AI 效率工具赛道】监控报告：大盘热点已全面汇总，您的 <strong>WeWeRSS 专属雷达</strong> 今日截获 15 篇高质量竞品推文。已为您执行“同行降维提取”策略。
+            </p>
+        </header>
+
+        <!-- Top 6 Topics Section -->
+        <section class="px-4">
+            <div class="flex items-center gap-2 mb-6">
+                <i class="fas fa-trophy text-yellow-500 text-2xl"></i>
+                <h2 class="text-2xl font-bold text-dark">今日推荐 Top 6 (基于私有号池挖掘)</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Topic Card 1 -->
+                <div class="glass-card rounded-2xl p-6 transition transform hover:-translate-y-1 hover:shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">TOP 1</div>
+                    <div class="mb-4">
+                        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800 mb-3">降维打击 · 商业实战</span>
+                        <h3 class="text-lg font-bold text-dark leading-snug mb-2">太离谱了！我用阿里新出的 AI，30 分钟白嫖了一家网店</h3>
+                        <p class="text-sm text-gray-500"><i class="fas fa-fire text-red-500 mr-1"></i> 热点源：「量子位」今日推送</p>
+                    </div>
+                    <div class="space-y-3 mb-5 bg-gray-50 p-4 rounded-xl">
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>📈 趋势爆发</span><span>9/10</span></div><div class="score-bar"><div class="score-fill bg-orange-500" style="width: 90%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>⚔️ 蓝海竞争</span><span>8/10</span></div><div class="score-bar"><div class="score-fill bg-yellow-500" style="width: 80%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>🎯 受众匹配</span><span>10/10</span></div><div class="score-bar"><div class="score-fill bg-green-500" style="width: 100%"></div></div></div>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div><h4 class="font-bold text-gray-800 flex items-center gap-1.5 mb-1"><i class="fas fa-lightbulb text-yellow-400"></i> 差异化切入点</h4><p class="text-gray-600 leading-relaxed">量子位的文章太硬核，我们把它降维成“普通人如何开无货源网店”的保姆级教程。主打“大厂背书 + 搞钱痛点”。</p></div>
+                        <div><h4 class="font-bold text-gray-800 flex items-center gap-1.5 mb-1"><i class="fas fa-pen-nib text-blue-500"></i> 备选标题</h4><ul class="list-disc pl-5 text-gray-600 space-y-1"><li>副业天花板！用阿里 AI 工具 30 分钟开一家网店</li><li>别只拿 AI 聊天了，大厂教你如何“一键生成赚钱机器”</li></ul></div>
+                    </div>
+                </div>
+
+                <!-- Topic Card 2 -->
+                <div class="glass-card rounded-2xl p-6 transition transform hover:-translate-y-1 hover:shadow-xl relative">
+                    <div class="absolute top-0 right-0 bg-orange-400 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">TOP 2</div>
+                    <div class="mb-4">
+                        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 mb-3">信息差猎奇</span>
+                        <h3 class="text-lg font-bold text-dark leading-snug mb-2">接上微信就能起飞？盘点那些把 AI 接入微信的离谱玩法</h3>
+                        <p class="text-sm text-gray-500"><i class="fas fa-eye text-emerald-500 mr-1"></i> 热点源：「卡尔的AI沃茨」今日推送</p>
+                    </div>
+                    <div class="space-y-3 mb-5 bg-gray-50 p-4 rounded-xl">
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>📈 趋势爆发</span><span>8/10</span></div><div class="score-bar"><div class="score-fill bg-orange-400" style="width: 80%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>⚔️ 蓝海竞争</span><span>9/10</span></div><div class="score-bar"><div class="score-fill bg-green-500" style="width: 90%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>🎯 受众匹配</span><span>9/10</span></div><div class="score-bar"><div class="score-fill bg-green-500" style="width: 90%"></div></div></div>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div><h4 class="font-bold text-gray-800 flex items-center gap-1.5 mb-1"><i class="fas fa-lightbulb text-yellow-400"></i> 差异化切入点</h4><p class="text-gray-600 leading-relaxed">普通人最关心的就是“能不能在微信里用”。整理这批 Clawbot 项目，挑出 3 个能当客服/陪聊的，教他们如何免费接入。</p></div>
+                        <div><h4 class="font-bold text-gray-800 flex items-center gap-1.5 mb-1"><i class="fas fa-pen-nib text-blue-500"></i> 备选标题</h4><ul class="list-disc pl-5 text-gray-600 space-y-1"><li>太卷了！我把 AI 接进微信后，群友都以为我是神仙</li><li>2026 最火玩法：手把手教你拥有一个微信 AI 小助手</li></ul></div>
+                    </div>
+                </div>
+
+                <!-- Topic Card 3 -->
+                <div class="glass-card rounded-2xl p-6 transition transform hover:-translate-y-1 hover:shadow-xl relative">
+                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">TOP 3</div>
+                    <div class="mb-4">
+                        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 mb-3">避坑指南</span>
+                        <h3 class="text-lg font-bold text-dark leading-snug mb-2">你的 API 被调包了？1个词测出你买的 AI 模型是真是假</h3>
+                        <p class="text-sm text-gray-500"><i class="fas fa-shield-alt text-blue-500 mr-1"></i> 热点源：「量子位」今日防骗预警</p>
+                    </div>
+                    <div class="space-y-3 mb-5 bg-gray-50 p-4 rounded-xl">
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>📈 趋势爆发</span><span>7/10</span></div><div class="score-bar"><div class="score-fill bg-yellow-400" style="width: 70%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>⚔️ 蓝海竞争</span><span>9/10</span></div><div class="score-bar"><div class="score-fill bg-green-500" style="width: 90%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>🎯 受众匹配</span><span>8/10</span></div><div class="score-bar"><div class="score-fill bg-green-400" style="width: 80%"></div></div></div>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div><h4 class="font-bold text-gray-800 flex items-center gap-1.5 mb-1"><i class="fas fa-lightbulb text-yellow-400"></i> 差异化切入点</h4><p class="text-gray-600 leading-relaxed">利用“避坑/防骗”情绪。把原文章中复杂的技术原理简化为一个“魔法测试词”，让大家复制去测套壳软件。</p></div>
+                        <div><h4 class="font-bold text-gray-800 flex items-center gap-1.5 mb-1"><i class="fas fa-pen-nib text-blue-500"></i> 备选标题</h4><ul class="list-disc pl-5 text-gray-600 space-y-1"><li>充钱买套壳 AI 前必看！一个词测出它的真假</li><li>揭秘 API 供应商黑幕：你用的可能是降级残血版</li></ul></div>
+                    </div>
+                </div>
+
+                <!-- Topic Card 4 -->
+                <div class="glass-card rounded-2xl p-6 transition transform hover:-translate-y-1 hover:shadow-xl relative">
+                    <div class="absolute top-0 right-0 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">TOP 4</div>
+                    <div class="mb-4">
+                        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-100 text-purple-800 mb-3">趣味玩法</span>
+                        <h3 class="text-lg font-bold text-dark leading-snug mb-2">告别鬼画符！用 AI 一行指令“复活”王羲之，连笔排版绝了</h3>
+                        <p class="text-sm text-gray-500"><i class="fas fa-paint-brush text-purple-500 mr-1"></i> 热点源：「量子位」开源项目推荐</p>
+                    </div>
+                    <div class="space-y-3 mb-5 bg-gray-50 p-4 rounded-xl">
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>📈 趋势爆发</span><span>8/10</span></div><div class="score-bar"><div class="score-fill bg-orange-400" style="width: 80%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>⚔️ 蓝海竞争</span><span>8/10</span></div><div class="score-bar"><div class="score-fill bg-yellow-500" style="width: 80%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>🎯 受众匹配</span><span>9/10</span></div><div class="score-bar"><div class="score-fill bg-green-500" style="width: 90%"></div></div></div>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div><h4 class="font-bold text-gray-800 flex items-center gap-1.5 mb-1"><i class="fas fa-lightbulb text-yellow-400"></i> 差异化切入点</h4><p class="text-gray-600 leading-relaxed">主打“手残党福音”。不需要懂代码，教普通人怎么用这个开源工具生成以假乱真的名家书法，可以用来做自媒体素材或贺卡。</p></div>
+                        <div><h4 class="font-bold text-gray-800 flex items-center gap-1.5 mb-1"><i class="fas fa-pen-nib text-blue-500"></i> 备选标题</h4><ul class="list-disc pl-5 text-gray-600 space-y-1"><li>绝了！用 AI 一行代码“复活”王羲之，网友：比我手写的还好看</li><li>普通人也能玩！AI 写毛笔字带连笔，手残党有救了</li></ul></div>
+                    </div>
+                </div>
+
+                <!-- Topic Card 5 -->
+                <div class="glass-card rounded-2xl p-6 transition transform hover:-translate-y-1 hover:shadow-xl relative">
+                    <div class="absolute top-0 right-0 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">TOP 5</div>
+                    <div class="mb-4">
+                        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-semibold bg-teal-100 text-teal-800 mb-3">前沿科普</span>
+                        <h3 class="text-lg font-bold text-dark leading-snug mb-2">单显卡就能跑“世界模型”！LeCun 新绝招让 AI 门槛再降</h3>
+                        <p class="text-sm text-gray-500"><i class="fas fa-microchip text-teal-500 mr-1"></i> 热点源：「量子位」技术突破</p>
+                    </div>
+                    <div class="space-y-3 mb-5 bg-gray-50 p-4 rounded-xl">
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>📈 趋势爆发</span><span>9/10</span></div><div class="score-bar"><div class="score-fill bg-orange-500" style="width: 90%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>⚔️ 蓝海竞争</span><span>7/10</span></div><div class="score-bar"><div class="score-fill bg-yellow-400" style="width: 70%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>🎯 受众匹配</span><span>7/10</span></div><div class="score-bar"><div class="score-fill bg-green-400" style="width: 70%"></div></div></div>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div><h4 class="font-bold text-gray-800 flex items-center gap-1.5 mb-1"><i class="fas fa-lightbulb text-yellow-400"></i> 差异化切入点</h4><p class="text-gray-600 leading-relaxed">弱化论文里的公式，强调“算力平民化”。告诉读者未来我们可能在自己的破电脑上也能跑顶级 AI 模型了，激发期待感。</p></div>
+                        <div><h4 class="font-bold text-gray-800 flex items-center gap-1.5 mb-1"><i class="fas fa-pen-nib text-blue-500"></i> 备选标题</h4><ul class="list-disc pl-5 text-gray-600 space-y-1"><li>AI 大佬出大招！单卡跑世界模型，普通人离 AGI 更近了？</li><li>算力平民化！LeCun 的新模型让小玩家也能上桌</li></ul></div>
+                    </div>
+                </div>
+
+                <!-- Topic Card 6 -->
+                <div class="glass-card rounded-2xl p-6 transition transform hover:-translate-y-1 hover:shadow-xl relative">
+                    <div class="absolute top-0 right-0 bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">TOP 6</div>
+                    <div class="mb-4">
+                        <span class="inline-block px-2.5 py-1 rounded-full text-xs font-semibold bg-pink-100 text-pink-800 mb-3">趋势盘点</span>
+                        <h3 class="text-lg font-bold text-dark leading-snug mb-2">一年一度 AI 榜单启动！2026 普通人必须关注的 AI 风向标</h3>
+                        <p class="text-sm text-gray-500"><i class="fas fa-chart-line text-pink-500 mr-1"></i> 热点源：「量子位」年度盛会</p>
+                    </div>
+                    <div class="space-y-3 mb-5 bg-gray-50 p-4 rounded-xl">
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>📈 趋势爆发</span><span>7/10</span></div><div class="score-bar"><div class="score-fill bg-yellow-400" style="width: 70%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>⚔️ 蓝海竞争</span><span>8/10</span></div><div class="score-bar"><div class="score-fill bg-yellow-500" style="width: 80%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-medium text-gray-600 mb-1"><span>🎯 受众匹配</span><span>9/10</span></div><div class="score-bar"><div class="score-fill bg-green-500" style="width: 90%"></div></div></div>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div><h4 class="font-bold text-gray-800 flex items-center gap-1.5 mb-1"><i class="fas fa-lightbulb text-yellow-400"></i> 差异化切入点</h4><p class="text-gray-600 leading-relaxed">借着行业榜单评选的热度，帮普通人梳理今年最实用、最有搞钱潜力的 3-5 个 AI 工具或赛道，做个信息差汇总。</p></div>
+                        <div><h4 class="font-bold text-gray-800 flex items-center gap-1.5 mb-1"><i class="fas fa-pen-nib text-blue-500"></i> 备选标题</h4><ul class="list-disc pl-5 text-gray-600 space-y-1"><li>2026 搞钱必看！这份 AI 榜单里藏着普通人的新风口</li><li>别只当旁观者了，今年最值得关注的 AI 趋势全在这</li></ul></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Raw Data Dashboard -->
+        <section class="px-4 pb-8">
+            <div class="glass-card rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-6 border-b border-gray-100 pb-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-satellite-dish text-primary text-xl"></i>
+                        <h2 class="text-xl font-bold text-dark">全网大盘热点与私有雷达数据面板</h2>
+                    </div>
+                    <span class="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded" id="data-update-time">实时更新</span>
+                </div>
+                
+                <!-- WeWeRSS Section -->
+                <div class="mb-8 bg-green-50 rounded-xl p-5 border border-green-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <i class="fab fa-weixin text-green-600 text-lg"></i>
+                            <h3 class="text-base font-bold text-green-800">专属号池 (WeWeRSS 全局同步)</h3>
+                        </div>
+                        <span class="text-xs bg-green-200 text-green-800 px-2.5 py-1 rounded font-bold">15 篇上新</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-64 overflow-y-auto pr-2" style="scrollbar-width: thin;">
+                        <!-- WeWeRSS Items -->
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-green-50"><p class="text-sm text-gray-800 font-medium truncate-2-lines" title="[量子位] 阿里在海外上了个“企业级龙虾”，我用它30分钟手搓了一家网店">[量子位] 阿里在海外上了个“企业级龙虾”，我用它30分钟手搓了一家网店</p><p class="text-xs text-blue-500 mt-1 cursor-pointer hover:underline">点击阅读原文</p></div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-green-50"><p class="text-sm text-gray-800 font-medium truncate-2-lines" title="[卡尔的AI沃茨] 来看看微信Clawbot催生出了多少离谱的项目吧">[卡尔的AI沃茨] 来看看微信Clawbot催生出了多少离谱的项目吧</p><p class="text-xs text-blue-500 mt-1 cursor-pointer hover:underline">点击阅读原文</p></div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-green-50"><p class="text-sm text-gray-800 font-medium truncate-2-lines" title="[量子位] LeCun的世界模型单GPU就能跑了">[量子位] LeCun的世界模型单GPU就能跑了</p><p class="text-xs text-blue-500 mt-1 cursor-pointer hover:underline">点击阅读原文</p></div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-green-50"><p class="text-sm text-gray-800 font-medium truncate-2-lines" title="[量子位] 1个Token测出模型降级调包！成本砍到千分之一，API供应商的小伎俩全曝光了">[量子位] 1个Token测出模型降级调包！...</p><p class="text-xs text-blue-500 mt-1 cursor-pointer hover:underline">点击阅读原文</p></div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-green-50"><p class="text-sm text-gray-800 font-medium truncate-2-lines" title="[量子位] 告别AI「鬼画符」！一行指令「复活」王羲之、苏轼，带连笔、懂排版，项目已开源丨ICLR'26">[量子位] 告别AI「鬼画符」！一行指令「复活」王羲之...</p><p class="text-xs text-blue-500 mt-1 cursor-pointer hover:underline">点击阅读原文</p></div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-green-50"><p class="text-sm text-gray-800 font-medium truncate-2-lines" title="[量子位] 一年一度最值得关注的AI榜单来啦！申报即日启动">[量子位] 一年一度最值得关注的AI榜单来啦！申报即日启动</p><p class="text-xs text-blue-500 mt-1 cursor-pointer hover:underline">点击阅读原文</p></div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-green-50"><p class="text-sm text-gray-800 font-medium truncate-2-lines" title="[量子位] 破解在线长时序重建难题！纯视觉、单卡实时的公里级流式3D重建｜CVPR'26">[量子位] 破解在线长时序重建难题！纯视觉、单卡实时的公里级流式3D重建</p><p class="text-xs text-blue-500 mt-1 cursor-pointer hover:underline">点击阅读原文</p></div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-green-50"><p class="text-sm text-gray-800 font-medium truncate-2-lines" title="[量子位] 别人都在卷视觉，这家具身公司偏要卷“手感”">[量子位] 别人都在卷视觉，这家具身公司偏要卷“手感”</p><p class="text-xs text-blue-500 mt-1 cursor-pointer hover:underline">点击阅读原文</p></div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-green-50"><p class="text-sm text-gray-800 font-medium truncate-2-lines" title="[量子位] 上海凭什么敢自封“开发者之城”？看完这场大会议程我悟了">[量子位] 上海凭什么敢自封“开发者之城”？</p><p class="text-xs text-blue-500 mt-1 cursor-pointer hover:underline">点击阅读原文</p></div>
+                    </div>
+                </div>
+
+                <!-- Market Trends Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Weibo -->
+                    <div class="bg-gray-50 rounded-xl p-4">
+                        <h3 class="text-sm font-bold text-gray-600 mb-3 flex items-center gap-2"><i class="fab fa-weibo text-red-500"></i> 微博热搜</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex gap-2"><span class="text-red-500 font-bold w-4">1</span><span class="truncate">迪士尼 物价</span></li>
+                            <li class="flex gap-2"><span class="text-orange-500 font-bold w-4">2</span><span class="truncate">武大靖聊张家齐直播带货</span></li>
+                            <li class="flex gap-2"><span class="text-yellow-500 font-bold w-4">3</span><span class="truncate">打卡春天里的大美中国</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">4</span><span class="truncate">一日本人威胁要杀中国外交人员</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">5</span><span class="truncate">专家建议26岁高卿尘立遗嘱</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">6</span><span class="truncate">以色列被打穿了</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">7</span><span class="truncate">王鹤棣将门独后骑马路透</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">8</span><span class="truncate">4岁女童就诊177次患者是母亲</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">9</span><span class="truncate">第一次看懂中文是因为看懂了英文</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">10</span><span class="truncate">金融监管总局副局长周亮被查</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Zhihu -->
+                    <div class="bg-gray-50 rounded-xl p-4">
+                        <h3 class="text-sm font-bold text-gray-600 mb-3 flex items-center gap-2"><i class="fab fa-zhihu text-blue-600"></i> 知乎热榜</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex gap-2"><span class="text-red-500 font-bold w-4">1</span><span class="truncate">郑钦文要求换回毛巾被外网批评</span></li>
+                            <li class="flex gap-2"><span class="text-orange-500 font-bold w-4">2</span><span class="truncate">给 65 岁以上老人纹联系方式可行吗</span></li>
+                            <li class="flex gap-2"><span class="text-yellow-500 font-bold w-4">3</span><span class="truncate">优衣库很贵为什么定义为快消低端</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">4</span><span class="truncate">网红博主一年读704本书被打假</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">5</span><span class="truncate">张凌赫演类似白起角色为何被说不行</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">6</span><span class="truncate">美以袭击伊朗进入第 25 天局势</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">7</span><span class="truncate">如何评价周杰伦《太阳之子》MV</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">8</span><span class="truncate">新疆库木塔格沙漠惊现雪豹靠什么活</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">9</span><span class="truncate">为何世界电竞第一人是韩国选手Faker</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">10</span><span class="truncate">致口腔纤维化生化药剂在丧尸游戏合理吗</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Baidu -->
+                    <div class="bg-gray-50 rounded-xl p-4">
+                        <h3 class="text-sm font-bold text-gray-600 mb-3 flex items-center gap-2"><i class="fas fa-paw text-blue-500"></i> 百度热搜</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex gap-2"><span class="text-red-500 font-bold w-4">1</span><span class="truncate">中方回应日本自卫队人员闯驻日使馆</span></li>
+                            <li class="flex gap-2"><span class="text-orange-500 font-bold w-4">2</span><span class="truncate">内存价格暴涨 旧手机成“香饽饽”</span></li>
+                            <li class="flex gap-2"><span class="text-yellow-500 font-bold w-4">3</span><span class="truncate">中国发现世界第二大轻稀土矿</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">4</span><span class="truncate">贵州溶洞发现地下反向森林</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">5</span><span class="truncate">金正恩：正式将韩国定义为头号敌国</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">6</span><span class="truncate">伊朗公布美军基地遭袭前后对比照片</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">7</span><span class="truncate">单休一天出了一趟国</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">8</span><span class="truncate">韩3名工人被困高空众目睽睽中遇难</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">9</span><span class="truncate">第一次看懂中文是因为看懂了英文</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">10</span><span class="truncate">国家金融监督管理总局副局长周亮被查</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Douyin -->
+                    <div class="bg-gray-50 rounded-xl p-4">
+                        <h3 class="text-sm font-bold text-gray-600 mb-3 flex items-center gap-2"><i class="fab fa-tiktok text-black"></i> 抖音热门</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex gap-2"><span class="text-red-500 font-bold w-4">1</span><span class="truncate">西班牙首相或将于4月访华</span></li>
+                            <li class="flex gap-2"><span class="text-orange-500 font-bold w-4">2</span><span class="truncate">实探“涨价潮”下的手机市场</span></li>
+                            <li class="flex gap-2"><span class="text-yellow-500 font-bold w-4">3</span><span class="truncate">中国发现世界第二大轻稀土矿</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">4</span><span class="truncate">人民网评“雪山救狐”演绎</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">5</span><span class="truncate">美国得州一炼油厂发生爆炸</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">6</span><span class="truncate">海边日落这样拍</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">7</span><span class="truncate">春茶奶茶大赛</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">8</span><span class="truncate">那朵名叫张赞英的月季花</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">9</span><span class="truncate">学术期刊评价有了中国标准</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">10</span><span class="truncate">WWDC26定档6月</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Bilibili -->
+                    <div class="bg-gray-50 rounded-xl p-4">
+                        <h3 class="text-sm font-bold text-gray-600 mb-3 flex items-center gap-2"><i class="fab fa-bilibili text-pink-500"></i> B站热门</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex gap-2"><span class="text-red-500 font-bold w-4">1</span><span class="truncate">周杰伦太阳之子MV上线</span></li>
+                            <li class="flex gap-2"><span class="text-orange-500 font-bold w-4">2</span><span class="truncate">万字解析G2零封GEN背后原因</span></li>
+                            <li class="flex gap-2"><span class="text-yellow-500 font-bold w-4">3</span><span class="truncate">GTC为行业指明了哪些方向</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">4</span><span class="truncate">锐评周杰伦新歌MV</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">5</span><span class="truncate">Bin夺冠曲世界第一上</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">6</span><span class="truncate">李大霄解读美股反弹</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">7</span><span class="truncate">解读美国金融市场波动背后</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">8</span><span class="truncate">周杰伦史上最贵MV</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">9</span><span class="truncate">跟Coser玩一天是什么体验</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">10</span><span class="truncate">英特尔新CPU能打败X3D吗</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Toutiao -->
+                    <div class="bg-gray-50 rounded-xl p-4">
+                        <h3 class="text-sm font-bold text-gray-600 mb-3 flex items-center gap-2"><i class="far fa-newspaper text-red-600"></i> 今日头条</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex gap-2"><span class="text-red-500 font-bold w-4">1</span><span class="truncate">旧手机回收一天一个价</span></li>
+                            <li class="flex gap-2"><span class="text-orange-500 font-bold w-4">2</span><span class="truncate">日本不法之徒强闯中使馆威胁杀人</span></li>
+                            <li class="flex gap-2"><span class="text-yellow-500 font-bold w-4">3</span><span class="truncate">这些老厂房 越来越年轻</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">4</span><span class="truncate">金正恩正式将韩国定义为头号敌国</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">5</span><span class="truncate">贵州溶洞发现地下反向森林</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">6</span><span class="truncate">独居女子去世 账户里还躺着600万元</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">7</span><span class="truncate">外交部回应日方拟将中日关系降级</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">8</span><span class="truncate">三大指数齐涨 全市场百股涨停</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">9</span><span class="truncate">伊朗公布美军基地遭袭前后对比照</span></li>
+                            <li class="flex gap-2"><span class="text-gray-400 font-bold w-4">10</span><span class="truncate">专家：日本自毁“观光立国”战略前景</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Dynamic Time and Greeting Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const now = new Date();
+            const hour = now.getHours();
+            
+            // Set Greeting
+            let greeting = "晚上好";
+            if (hour >= 5 && hour < 12) {
+                greeting = "早上好";
+            } else if (hour >= 12 && hour < 18) {
+                greeting = "中午好"; // 或者下午好，按要求改为"中午好/下午好"都可以，用户说"早上好、中午好、还是晚上好"
+            }
+            if (hour >= 12 && hour < 14) {
+                greeting = "中午好";
+            } else if (hour >= 14 && hour < 18) {
+                greeting = "下午好";
+            }
+            document.getElementById('greeting-text').innerText = greeting;
+
+            // Set Current Time
+            const padZero = (num) => String(num).padStart(2, '0');
+            const dateStr = `${now.getFullYear()}-${padZero(now.getMonth() + 1)}-${padZero(now.getDate())} ${padZero(now.getHours())}:${padZero(now.getMinutes())}`;
+            document.getElementById('current-time-display').innerHTML = `<i class="far fa-clock"></i> 更新时间：${dateStr}`;
+            document.getElementById('data-update-time').innerText = `更新时间：${dateStr}`;
+        });
+    </script>
+</body>
+</html>
