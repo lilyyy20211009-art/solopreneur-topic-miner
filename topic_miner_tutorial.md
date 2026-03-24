@@ -28,16 +28,37 @@
 
 我們不需要寫複雜的程式碼，只需要透過自然語言與 Trae (或 Claude Code) 對話，就能把我們的業務邏輯固化成一個自動化的 Skill。
 
-### 創建與安裝步驟：
-1. **準備環境**：下載並打開 Trae IDE。
-2. **導入底層腳本**：
-   - 在你的工作目錄下（例如 `内容创作` 文件夾），讓 Trae 幫你創建一個 `.trae/skills/solopreneur-topic-miner` 文件夾。
-   - 將本教程**第五章**開源的 `fetch_trends.py`（數據抓取腳本）和 `render_dashboard.py`（網頁渲染腳本）複製到該文件夾中。
-3. **導入大腦規則**：
-   - 將第五章開源的 `SKILL.md` 文件也複製到該文件夾中。
-   - *(可選)* 為了獲得最佳的網頁排版效果，建議你同時安裝 `frontend-design` 和 `ui-ux-pro-max-skill` 這兩個前端設計 Skill。
-4. **安裝依賴**：在 Trae 終端機輸入 `pip install requests` 安裝必要的網絡請求庫。
-5. **喚醒 Agent**：在對話框輸入 `啟動 solopreneur-topic-miner`，它就會開始引導你配置專屬賽道。
+如果你想直接使用本教程開發好的 `solopreneur-topic-miner`，請按照以下「抄作業」步驟進行安裝：
+
+### 📥 快速安裝步驟（給學員的指南）
+
+**Step 1: 準備專屬資料夾**
+1. 打開 Trae IDE，進入你的工作目錄（例如 `我的自媒體項目`）。
+2. 在左側文件樹中，創建一個隱藏資料夾路徑：`.trae/skills/solopreneur-topic-miner`。
+*(注意：`.trae` 開頭的資料夾默認是隱藏的，如果看不到，請在 Trae 的設置或文件樹右鍵菜單中開啟「顯示隱藏文件」。)*
+
+**Step 2: 複製核心代碼（Agent 的靈魂）**
+請將本教程**第五章**提供的開源代碼，分別複製並保存為以下三個文件，放入剛剛創建的資料夾中：
+*   📝 `SKILL.md`：直接複製貼上（這是 Agent 的「大腦」與規則）。
+*   🐍 `fetch_trends.py`：直接複製貼上（這是 Agent 去全網抓取熱點的「手腳」）。
+*   🎨 `render_dashboard.py`：直接複製貼上（這是幫你畫出精美 HTML 數據看板的「畫筆」）。
+*(注：`user_profile.json` 不需要手動創建，Agent 首次啟動時會自動問你並生成。)*
+
+**Step 3: 安裝環境依賴**
+這個腳本去網路上抓取數據需要用到 Python 的網絡請求庫。請在 Trae 底部的「終端機 (Terminal)」中輸入並運行以下命令：
+```bash
+pip install requests
+```
+
+**Step 4: (強烈推薦) 安裝前端設計 Skill**
+為了讓你的 HTML 數據看板呈現出極具科技感的 Glassmorphism（毛玻璃）高級排版，建議你將 `frontend-design` 和 `ui-ux-pro-max-skill` 這兩個專業設計 Skill 的文件也一併放入你的 `.trae/skills/` 目錄下。這樣 Agent 就能跨 Skill 聯動，為你渲染出最頂級的視覺效果。
+
+**Step 5: 一鍵啟動！**
+所有文件就位後，回到 Trae 的 AI 對話框，輸入你的召喚指令：
+```bash
+啟動 solopreneur-topic-miner
+```
+Agent 就會立刻甦醒，並親切地問你：“請告訴我你的創作賽道和目標受眾是什麼？” —— 恭喜你，你的專屬爆款選題情報局正式上線！
 
 ---
 
