@@ -28,11 +28,16 @@
 
 我們不需要寫複雜的程式碼，只需要透過自然語言與 Trae (或 Claude Code) 對話，就能把我們的業務邏輯固化成一個自動化的 Skill。
 
-### 創建步驟：
-1. 打開 Trae IDE，進入對話框。
-2. 告訴它你的需求：「我想創建一個名為 `solopreneur-topic-miner` 的 Skill，用於自動挖掘爆款選題。」
-3. Trae 會自動在 `.trae/skills/` 目錄下生成 `SKILL.md` 規則文件。
-4. 接下來，我們只需要把下面第二章的**「監控邏輯、打分維度、呈現方式」**以 Prompt 的形式寫入 `SKILL.md`，這個 Agent 就擁有了你的「主編大腦」。
+### 創建與安裝步驟：
+1. **準備環境**：下載並打開 Trae IDE。
+2. **導入底層腳本**：
+   - 在你的工作目錄下（例如 `内容创作` 文件夾），讓 Trae 幫你創建一個 `.trae/skills/solopreneur-topic-miner` 文件夾。
+   - 將本教程**第五章**開源的 `fetch_trends.py`（數據抓取腳本）和 `render_dashboard.py`（網頁渲染腳本）複製到該文件夾中。
+3. **導入大腦規則**：
+   - 將第五章開源的 `SKILL.md` 文件也複製到該文件夾中。
+   - *(可選)* 為了獲得最佳的網頁排版效果，建議你同時安裝 `frontend-design` 和 `ui-ux-pro-max-skill` 這兩個前端設計 Skill。
+4. **安裝依賴**：在 Trae 終端機輸入 `pip install requests` 安裝必要的網絡請求庫。
+5. **喚醒 Agent**：在對話框輸入 `啟動 solopreneur-topic-miner`，它就會開始引導你配置專屬賽道。
 
 ---
 
