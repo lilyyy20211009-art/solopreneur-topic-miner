@@ -180,9 +180,9 @@ description: "自动挖掘并筛选爆款选题。包含热点监控、数据分
 ### Step 3: 执行层 —— 差异化包装与输出 (Output Generation)
 针对脱颖而出的 Top 6 选题，你必须给出详细的执行建议，而不是一个干瘪的词条。
 
-## 📝 最终输出格式
+## 📝 最终输出格式与自动渲染网页 (Output & Dashboard)
 
-对于每一个入选的 Top 6 选题，请使用以下结构输出报告给用户：
+对于每一个入选的 Top 6 选题，请先在对话框中使用以下结构输出文字报告给用户：
 
 ### 🏆 选题一：[用一句话概括话题核心内容]
 *   **🔥 热点来源与现状**：简述这个热点是怎么火的，目前在哪些平台讨论度高。
@@ -196,6 +196,30 @@ description: "自动挖掘并筛选爆款选题。包含热点监控、数据分
     *   引言（Hook）：...
     *   核心观点（Body）：...
     *   行动呼吁（CTA）：...
+
+**【强制动作】：在输出完文字后，你必须将这 6 个选题的数据写入本地，以自动更新 HTML 看板！**
+1. 将你刚才生成的 6 个选题，按照以下 JSON 格式使用文件写入工具保存到 `.trae/skills/solopreneur-topic-miner/latest_topics.json`：
+```json
+[
+  {
+    "title": "话题标题",
+    "source": "热点来源",
+    "tag": "分类标签（如：降维打击）",
+    "trend_score": 9,
+    "comp_score": 8,
+    "rel_score": 10,
+    "angle": "差异化切入点说明",
+    "alt_titles": ["备选标题1", "备选标题2", "备选标题3"],
+    "color_theme": "indigo"
+  }
+]
+```
+*(注：color_theme 可以在 indigo, emerald, blue, purple, teal, pink, orange, red 中随机选择)*
+2. 使用终端工具运行命令：`python3 .trae/skills/solopreneur-topic-miner/render_dashboard.py`，这会将数据更新到网页中。
+   *（注意：该网页的初始设计是基于 `frontend-design` 和 `ui-ux-pro-max-skill` 这两个专业设计 Skill 生成的，具备现代化的 Glassmorphism 风格和 TailwindCSS 响应式布局。`render_dashboard.py` 会在这个优秀的设计基础上自动注入每日最新数据。）*
+3. **判断是否自动打开网页**：
+   - 如果本次对话中你是**新建**了 `user_profile.json`（说明是第一次使用的新用户），你必须执行命令 `open daily_topic_dashboard.html` 自动在浏览器中打开网页。
+   - 如果是**老用户**（已经存在 `user_profile.json`），**不需要**再次打开网页。你只需要在文字回复的末尾加上一句：“💡 您的专属网页版数据看板已同步更新，您可以随时打开 `daily_topic_dashboard.html` 查看最新情况。”
 
 ---
 
@@ -590,7 +614,17 @@ def main():
     annotated = annotate_trends_with_niche(results, niche)
 
     # 输出结果（JSON 格式供程序解析）
-    print(json.dumps(annotated, ensure_ascii=False, indent=2))
+    json_output = json.dumps(annotated, ensure_ascii=False, indent=2)
+    print(json_output)
+    
+    # 将最新数据保存到文件，供渲染看板使用
+    try:
+        import os
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        with open(os.path.join(base_dir, "latest_raw_data.json"), "w", encoding="utf-8") as f:
+            f.write(json_output)
+    except Exception as e:
+        pass
 
 
 if __name__ == "__main__":

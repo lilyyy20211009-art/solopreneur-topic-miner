@@ -93,6 +93,7 @@ description: "自动挖掘并筛选爆款选题。包含热点监控、数据分
 ```
 *(注：color_theme 可以在 indigo, emerald, blue, purple, teal, pink, orange, red 中随机选择)*
 2. 使用终端工具运行命令：`python3 .trae/skills/solopreneur-topic-miner/render_dashboard.py`，这会将数据更新到网页中。
+   *（注意：该网页的初始设计是基于 `frontend-design` 和 `ui-ux-pro-max-skill` 这两个专业设计 Skill 生成的，具备现代化的 Glassmorphism 风格和 TailwindCSS 响应式布局。`render_dashboard.py` 会在这个优秀的设计基础上自动注入每日最新数据。）*
 3. **判断是否自动打开网页**：
    - 如果本次对话中你是**新建**了 `user_profile.json`（说明是第一次使用的新用户），你必须执行命令 `open daily_topic_dashboard.html` 自动在浏览器中打开网页。
    - 如果是**老用户**（已经存在 `user_profile.json`），**不需要**再次打开网页。你只需要在文字回复的末尾加上一句：“💡 您的专属网页版数据看板已同步更新，您可以随时打开 `daily_topic_dashboard.html` 查看最新情况。”
