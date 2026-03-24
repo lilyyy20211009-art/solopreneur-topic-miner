@@ -215,9 +215,14 @@ description: "自动挖掘并筛选爆款选题。包含热点监控、数据分
 ]
 ```
 *(注：color_theme 可以在 indigo, emerald, blue, purple, teal, pink, orange, red 中随机选择)*
-2. 使用终端工具运行命令：`python3 .trae/skills/solopreneur-topic-miner/render_dashboard.py`，这会将数据更新到网页中。
-   *（注意：该网页的初始设计是基于 `frontend-design` 和 `ui-ux-pro-max-skill` 这两个专业设计 Skill 生成的，具备现代化的 Glassmorphism 风格和 TailwindCSS 响应式布局。`render_dashboard.py` 会在这个优秀的设计基础上自动注入每日最新数据。）*
-3. **判断是否自动打开网页**：
+2. **判断用户本地是否已存在看板及所需 Skill**：
+   - 检查本地是否已存在 `daily_topic_dashboard.html` 文件。
+   - 如果**不存在**（说明是新用户首次运行）：
+     - 你需要告诉用户：“正在为您调用专业 UI/UX 设计 Agent 创建专属看板...”
+     - 你必须在你的工具列表中，尝试调用名为 `frontend-design` 和 `ui-ux-pro-max-skill` 的 Skill（如果可用），要求它们：“根据当前赛道生成一个包含 Top 6 选题卡片和全网热点列表的现代 Glassmorphism 风格数据看板，使用 TailwindCSS。”
+     - 如果无法直接调用这两个 Skill，你必须亲自**模仿** `ui-ux-pro-max-skill` 的高级设计标准，编写并生成一个极具科技感、支持深浅色模式、包含动画过渡的 `daily_topic_dashboard.html` 模板，并确保后续步骤可以更新它。
+3. 使用终端工具运行命令：`python3 .trae/skills/solopreneur-topic-miner/render_dashboard.py`，这会将最新数据更新到网页中。
+4. **判断是否自动打开网页**：
    - 如果本次对话中你是**新建**了 `user_profile.json`（说明是第一次使用的新用户），你必须执行命令 `open daily_topic_dashboard.html` 自动在浏览器中打开网页。
    - 如果是**老用户**（已经存在 `user_profile.json`），**不需要**再次打开网页。你只需要在文字回复的末尾加上一句：“💡 您的专属网页版数据看板已同步更新，您可以随时打开 `daily_topic_dashboard.html` 查看最新情况。”
 
