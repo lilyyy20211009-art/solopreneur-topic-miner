@@ -1,0 +1,485 @@
+{
+  "微博": {
+    "platform": "微博",
+    "data": [
+      {
+        "rank": 1,
+        "title": "日本被曝多年搞反华教育",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 2,
+        "title": "女子称专柜买4个LV包鉴定为假货",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 3,
+        "title": "七彩云南万千气象",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 4,
+        "title": "周杰伦新歌从夯到拉排名",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 5,
+        "title": "家里吃灰的旧手机突然成了香饽饽",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 6,
+        "title": "徐涛 难以置信缓不过来",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 7,
+        "title": "美国与伊朗和谈方案曝光",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 8,
+        "title": "张雪峰最后一次直播画面",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 9,
+        "title": "陈哲远一笑随歌飙升榜第二",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 10,
+        "title": "旧手机回收价暴涨五六倍",
+        "hot": "",
+        "relevance": 0
+      }
+    ],
+    "update_time": "",
+    "error": null
+  },
+  "知乎": {
+    "platform": "知乎",
+    "data": [
+      {
+        "rank": 1,
+        "title": "如何评价周杰伦新专辑《太阳之子》？",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 2,
+        "title": "哪些情况可能导致因心源性猝死？第一时间该怎样急救？可以怎样尽早发现？",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 3,
+        "title": "如果把地球当做一个直径 1cm 的小球，整个目前观测到的宇宙有多大？",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 4,
+        "title": "网传 APP 截图都带「暗水印」可追踪身份，这是真的吗？「暗水印」是什么东西？背后有什么原理？",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 5,
+        "title": "多个平台「汽车之家」社交账号被禁止关注，到底是怎么回事？",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 6,
+        "title": "张雪峰还在抢救时，病历就微信群中被广泛传播，这样是泄露患者隐私吗？普通人转发病历是否也构成侵权呢？",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 7,
+        "title": "美以袭击伊朗进入第 26 天，当前局势如何？哪些信息值得关注？",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 8,
+        "title": "外交部回应一名日本自卫队人员闯入中国驻日本大使馆，要求日方立即彻查，具体情况如何？",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 9,
+        "title": "张雪峰，他怎样影响过你的人生？",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 10,
+        "title": "张雪峰因心源性猝死去世，年仅 41 岁，你对他有哪些记忆？",
+        "hot": "",
+        "relevance": 0
+      }
+    ],
+    "update_time": "",
+    "error": null
+  },
+  "百度": {
+    "platform": "百度",
+    "data": [
+      {
+        "rank": 1,
+        "title": "多家银行发布风险提示",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 2,
+        "title": "“人生真好玩 下辈子还来”",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 3,
+        "title": "中国航空总人口超5亿 意味着什么",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 4,
+        "title": "曾经只值10元的二手机 现回收价500",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 5,
+        "title": "到底什么是心源性猝死",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 6,
+        "title": "周杰伦新歌口碑",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 7,
+        "title": "“内鬼”受贿两千万后公司损失一个亿",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 8,
+        "title": "运动后出现这种症状别轻视",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 9,
+        "title": "猝死为何发生？疲惫时别硬扛",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 10,
+        "title": "原来戒烟真的有最佳年龄",
+        "hot": "",
+        "relevance": 0
+      }
+    ],
+    "update_time": "",
+    "error": null
+  },
+  "抖音": {
+    "platform": "抖音",
+    "data": [
+      {
+        "rank": 1,
+        "title": "AI时代最离谱的KPI",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 2,
+        "title": "吃一口春花尝尝春天的味道",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 3,
+        "title": "我国日均词元调用量超140万亿",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 4,
+        "title": "晒出我的春日百搭开衫",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 5,
+        "title": "离别是为了更好的相遇",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 6,
+        "title": "央行开展5000亿元MLF操作",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 7,
+        "title": "贺希宁极限压哨2+1",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 8,
+        "title": "WWDC26定档6月",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 9,
+        "title": "学术期刊评价有了中国标准",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 10,
+        "title": "U23国足主场亮剑",
+        "hot": "",
+        "relevance": 0
+      }
+    ],
+    "update_time": "",
+    "error": null
+  },
+  "B站": {
+    "platform": "B站",
+    "data": [
+      {
+        "rank": 1,
+        "title": "什么叫心源性猝死",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 2,
+        "title": "iOS26.4正式版发布",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 3,
+        "title": "请重视身体的求救信号",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 4,
+        "title": "夜的第七章但太阳之子",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 5,
+        "title": "心源性猝死有无前兆",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 6,
+        "title": "OpenAI宣布关停Sora",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 7,
+        "title": "被叫词元的Token是什么",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 8,
+        "title": "红色沙漠有哪些优缺点",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 9,
+        "title": "绿龙溃败背后问题在哪",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 10,
+        "title": "真车迷如何看F1比赛",
+        "hot": "",
+        "relevance": 0
+      }
+    ],
+    "update_time": "",
+    "error": null
+  },
+  "今日头条": {
+    "platform": "今日头条",
+    "data": [
+      {
+        "rank": 1,
+        "title": "携刀闯中使馆日本男子身份披露",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 2,
+        "title": "曾经只值10元二手机现在回收价500元",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 3,
+        "title": "一组对比图看雄安巨变",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 4,
+        "title": "中方回应日本人强闯中使馆威胁杀人",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 5,
+        "title": "老挝“油荒”中国电动车卖到断货",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 6,
+        "title": "跑步会不会导致猝死",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 7,
+        "title": "官方统计每天1500人心源性猝死离世",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 8,
+        "title": "美拟推动停火1月 与伊朗和谈方案曝光",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 9,
+        "title": "熬夜时你的心血管在喊救命",
+        "hot": "",
+        "relevance": 0
+      },
+      {
+        "rank": 10,
+        "title": "奖状在小学教育中的作用有多大",
+        "hot": "",
+        "relevance": 0
+      }
+    ],
+    "update_time": "",
+    "error": null
+  },
+  "全局监控": {
+    "platform": "WeWeRSS (全库同步)",
+    "data": [
+      {
+        "title": "[量子位] 阿里在海外上了个“企业级龙虾”，我用它30分钟手搓了一家网店",
+        "link": "https://mp.weixin.qq.com/s/S3CZBNf9Rks9twQzZ6m3Ow",
+        "source": "WeWeRSS"
+      },
+      {
+        "title": "[量子位] LeCun的世界模型单GPU就能跑了",
+        "link": "https://mp.weixin.qq.com/s/mqChumP4McRppyCT8XrtLw",
+        "source": "WeWeRSS"
+      },
+      {
+        "title": "[量子位] 破解在线长时序重建难题！纯视觉、单卡实时的公里级流式3D重建｜CVPR'26",
+        "link": "https://mp.weixin.qq.com/s/k0isW3oy-lpIgI7FCunWQQ",
+        "source": "WeWeRSS"
+      },
+      {
+        "title": "[量子位] @所有人，2026真的需要自己上手用AI了丨年度AI盛会",
+        "link": "https://mp.weixin.qq.com/s/MgWnTHUI538aUXWscZHFXQ",
+        "source": "WeWeRSS"
+      },
+      {
+        "title": "[量子位] 量子位编辑作者招聘",
+        "link": "https://mp.weixin.qq.com/s/LItMusndPZ96aeaAz2ASAQ",
+        "source": "WeWeRSS"
+      },
+      {
+        "title": "[dontbesilent] 为什么我不做售前",
+        "link": "https://mp.weixin.qq.com/s/QXlfUlHRciQKTA1viQps8g",
+        "source": "WeWeRSS"
+      },
+      {
+        "title": "[卡尔的AI沃茨] 来看看微信Clawbot催生出了多少离谱的项目吧",
+        "link": "https://mp.weixin.qq.com/s/Gx2uweRBEgo_MuAb-m3HCQ",
+        "source": "WeWeRSS"
+      },
+      {
+        "title": "[量子位] 别人都在卷视觉，这家具身公司偏要卷“手感”",
+        "link": "https://mp.weixin.qq.com/s/sEJNorL0dtCD3tAflfBYDQ",
+        "source": "WeWeRSS"
+      },
+      {
+        "title": "[量子位] 1个Token测出模型降级调包！成本砍到千分之一，API供应商的小伎俩全曝光了",
+        "link": "https://mp.weixin.qq.com/s/ZelUviYX8UctyM_z_c71Yg",
+        "source": "WeWeRSS"
+      },
+      {
+        "title": "[量子位] 告别AI「鬼画符」！一行指令「复活」王羲之、苏轼，带连笔、懂排版，项目已开源丨ICLR'26",
+        "link": "https://mp.weixin.qq.com/s/5wnScYck_VR3Wy-b3pcuAA",
+        "source": "WeWeRSS"
+      },
+      {
+        "title": "[量子位] 一年一度最值得关注的AI榜单来啦！申报即日启动",
+        "link": "https://mp.weixin.qq.com/s/Ih5shOj83h-4OzWSk7owLQ",
+        "source": "WeWeRSS"
+      },
+      {
+        "title": "[量子位] 量子位编辑作者招聘",
+        "link": "https://mp.weixin.qq.com/s/5uqvGja4eNoXFhDCd-FpTA",
+        "source": "WeWeRSS"
+      },
+      {
+        "title": "[数字生命卡兹克] 2026，我们倾尽所有，想为大家办一场万人AI大会丨AIFUT。",
+        "link": "https://mp.weixin.qq.com/s/TVpDvuHMd2OvWdIsnlp9bA",
+        "source": "WeWeRSS"
+      },
+      {
+        "title": "[dontbesilent] dbskill 更新：一条指令优化你的短视频开头",
+        "link": "https://mp.weixin.qq.com/s/xkPmSjQ6SFbjyxcm2rxTsA",
+        "source": "WeWeRSS"
+      },
+      {
+        "title": "[数字生命卡兹克] 聊聊微信的Agent野心。",
+        "link": "https://mp.weixin.qq.com/s/te-n9a4yAnwF5b6ioatR1A",
+        "source": "WeWeRSS"
+      }
+    ],
+    "error": null
+  }
+}
