@@ -54,8 +54,13 @@
 pip install requests
 ```
 
-**Step 4: (強烈推薦) 安裝前端設計 Skill**
-為了讓你的 HTML 數據看板呈現出極具科技感的 Glassmorphism（毛玻璃）高級排版，建議你將 `frontend-design` 和 `ui-ux-pro-max-skill` 這兩個專業設計 Skill 的文件也一併放入你的 `.trae/skills/` 目錄下。這樣 Agent 就能跨 Skill 聯動，為你渲染出最頂級的視覺效果。
+**Step 4: (強烈推薦) 安裝前端設計 Skill 以實現多智能體協作**
+為了讓你的 HTML 數據看板呈現出極具科技感的 Glassmorphism（毛玻璃）高級排版，你需要讓主 Agent 能夠呼叫專業的「設計師 Agent」。
+1. 在 `.trae/skills/` 目錄下，**再新建兩個資料夾**：
+   *   `frontend-design`
+   *   `ui-ux-pro-max-skill`
+2. 將這兩個 Skill 的核心 `SKILL.md` 文件（老師會提供）分別放入對應的資料夾中。
+*這一步能完美展現 AI 時代的高階玩法：**多智能體協作 (Multi-Agent Collaboration)**。你的主 Agent 會變成一個「項目經理」，自動把畫網頁的活兒派發給這兩個專業的設計師 Agent！*
 
 **Step 5: 一鍵啟動！**
 所有文件就位後，回到 Trae 的 AI 對話框，輸入你的召喚指令：
